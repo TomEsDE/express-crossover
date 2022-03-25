@@ -39,7 +39,7 @@ class QuizService {
     // quizDB.images = await imageDao.getImagesByQuiz(quizDB.id);
     // quizDB.attributes = await attributeDao.getAttributesByQuiz(quizDB.id);
 
-    return quizDB;
+    return await this.getQuiz(quizId);
   }
 
   async addRandomQuestion(quizId, topicId = 1) {
@@ -53,7 +53,7 @@ class QuizService {
     // quizDB.images = await imageDao.getImagesByQuiz(quizDB.id);
     // quizDB.attributes = await attributeDao.getAttributesByQuiz(quizDB.id);
 
-    return quizDB;
+    return await this.getQuiz(quizId);
   }
 
   async updateQuestion(quizDto) {
