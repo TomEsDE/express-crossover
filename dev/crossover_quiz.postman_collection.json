@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "8f0264d3-5417-4187-88c5-b3428a58abc3",
+		"name": "crossover_quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "quiz",
+			"item": [
+				{
+					"name": "get quiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3033/quiz/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"quiz",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3033/quiz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add quiz question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3033/quiz/11/add/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"quiz",
+								"11",
+								"add",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add quiz random question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3033/quiz/14/addRandom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"quiz",
+								"14",
+								"addRandom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"martin\",\r\n    \"email\": \"martin@wbs.de\",\r\n    \"password\": \"pw123\",\r\n    \"validated\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3033/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3033/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tom\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3033/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "get question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3033/question/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3033",
+							"path": [
+								"question",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get random question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3033/questionRandom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3033",
+					"path": [
+						"questionRandom"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
