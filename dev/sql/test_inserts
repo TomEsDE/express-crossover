@@ -1,0 +1,87 @@
+
+-- ###### user
+INSERT INTO public.users(username, email, password, validated) VALUES ('tom', 'tom@wbs.de', '4321', true);
+INSERT INTO public.users(username, email, password, validated) VALUES ('hauke', 'hauke@wbs.de', '4321', true);
+INSERT INTO public.users(username, email, password, validated) VALUES ('olin', 'olin@wbs.de', '4321', true);
+INSERT INTO public.users(username, email, password, validated) VALUES ('andrea', 'andrea@wbs.de', '4321', true);
+INSERT INTO public.users(username, email, password, validated) VALUES ('hanna', 'hanna@wbs.de', '4321', true);
+
+-- ###### static
+INSERT INTO public.topic(description) VALUES ('History');
+INSERT INTO public.topic(description) VALUES ('Law');
+INSERT INTO public.topic(description) VALUES ('Finance');
+INSERT INTO public.topic(description) VALUES ('Administration');
+
+
+INSERT INTO public.language(country, country_code) VALUES ('Deutschland', 'DE');
+INSERT INTO public.language(country, country_code) VALUES ('United States', 'US');
+INSERT INTO public.language(country, country_code) VALUES ('Italia', 'IT');
+
+
+-- ###### questions
+INSERT INTO public.question(question, description, "number", image_url, topic_id, language_id)
+	VALUES ('What Color has blue', 'Select a color below', 1, 'http://www.pics.com/abc.png', 1, 2);
+
+
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('blue', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('yellow', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('red', 1, 1, true);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('black', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('green', 1, 1, false);
+
+
+-- ###### questions
+INSERT INTO public.question(question, description, "number", image_url, topic_id, language_id)
+	VALUES ('What is the capital of Ireland', 'Select a city below', 1, 'http://www.pics.com/abcd.png', 1, 2);
+
+
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('Berlin', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('New York', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('Dublin', 1, 1, true);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('Shanghai', 1, 1, false);
+INSERT INTO public.answer(description, "number", question_id, "check") VALUES ('Mumbai', 1, 1, false);
+
+
+
+	
+-- ###### recipes
+insert into recipe (title, description, rating, author_id, recipeDate) values ('Ein leckerer Kuchen', 'Der Lieblingskuchen meiner Nichte', 1.4, 1, '2021-10-12');
+insert into recipe (title, description, rating, author_id, recipeDate) values ('Fauliges Gulasch', null, 3.5, 3, '2019-04-07');
+
+
+-- ###### ingridients
+insert into ingridient (description, amount, unit, recipe_id) values ('Mehl', 200, 'g', 1);
+insert into ingridient (description, amount, unit, recipe_id) values ('Zucker', 100, 'g', 1);
+insert into ingridient (description, amount, unit, recipe_id) values ('Milch', 2, 'l', 1);
+insert into ingridient (description, amount, unit, recipe_id) values ('Mehl', 200, 'g', 2);
+insert into ingridient (description, amount, unit, recipe_id) values ('Milch', 500, 'ml', 2);
+
+
+-- ###### preparation
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('Hier wird zubereitet', 1, 1);
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('Schritt 2', 2, 1);
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('Schritt ohne step', null, 1);
+
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('Erstmal einen trinken', 1, 2);
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('Schritt 2', 2, 2);
+INSERT INTO public.preparation(description, step, recipe_id) VALUES ('noch n Schluck', null, 2);
+
+
+-- ###### attribute_key
+delete from attribute_key;
+insert into attribute_key (id, key) values (1, 'cooktime');
+insert into attribute_key (id, key) values (2, 'preptime');
+insert into attribute_key (id, key) values (3, 'worktime');
+insert into attribute_key (id, key) values (4, 'totaltime');
+insert into attribute_key (id, key) values (5, 'resttime');
+insert into attribute_key (id, key) values (6, 'servings');
+insert into attribute_key (id, key) values (7, 'difficulty');
+
+-- ###### attributes
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('30 min.', null, 1, 1);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('45 min.', null, 2, 1);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('30 min.', null, 3, 1);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('4', null, 4, 1);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('10 min.', null, 1, 2);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('25 min.', null, 2, 2);
+insert into attribute (value1, value2, attribute_key_id, recipe_id) values ('40 min.', null, 3, 2);

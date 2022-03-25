@@ -1,0 +1,26 @@
+{
+  "name": "express-cookbook",
+  "version": "0.0.1",
+  "description": "backend to cookbook-react-app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/server.js",
+    "nonodenom": "node --experimental-modules --es-module-specifier-resolution=node ./src/server.js"
+  },
+  "keywords": [
+    "express",
+    "nodemon",
+    "postgres"
+  ],
+  "author": "Thomas",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "knex": "^1.0.4",
+    "luxon": "^2.3.1",
+    "pg": "^8.7.3"
+  }
+}

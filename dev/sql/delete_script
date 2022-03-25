@@ -1,0 +1,30 @@
+select * from users;
+select * from attribute_key;
+
+
+select * from image_recipe_junc;
+select * from image;
+select * from user_recipe_junc;
+select * from preparation;
+select * from ingridient limit 10;
+select * from tag;
+select * from "attribute";
+select * from recipe order by id desc;
+
+delete from image_recipe_junc;
+delete from image;
+delete from user_recipe_junc;
+delete from preparation;
+delete from ingridient;
+delete from "attribute";
+delete from tag;
+delete from recipe;
+
+delete from attribute_key;
+insert into attribute_key (id, key) values (1, 'cooktime');
+insert into attribute_key (id, key) values (2, 'preptime');
+insert into attribute_key (id, key) values (3, 'worktime');
+insert into attribute_key (id, key) values (4, 'totaltime');
+insert into attribute_key (id, key) values (5, 'resttime');
+insert into attribute_key (id, key) values (6, 'servings');
+insert into attribute_key (id, key) values (7, 'difficulty');

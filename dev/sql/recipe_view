@@ -1,0 +1,9 @@
+select * from recipe_view where lower(title) like '%kalbsbäckchen%' or lower(description) like '%kuchen%';
+select * from recipe_view;
+
+select title, count(*) from recipe group by title having count(*)>1;
+
+select * from recipe where title = 'Butterscotch-Zopfkuchen mit Pekannüssen';
+
+select * from attribute_key;
+select * from attribute where recipe_id = 3752;
