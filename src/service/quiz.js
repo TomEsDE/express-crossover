@@ -18,13 +18,19 @@ class QuizService {
     console.log('quizDB', quizDB);
     quizDB.questions = await quizDao.getQuizQuestions(quizDB.id);
 
-    if (quizDB.questions) {
-      for (const question of quizDB.questions) {
-        question.question = await questionService.getQuestion(
-          question.questionId
-        );
-      }
-    }
+    // if (quizDB.questions) {
+    //   for (const question of quizDB.questions) {
+    //     question.question = await questionService.getQuestion(
+    //       question.questionId
+    //     );
+    //   }
+    // }
+    // faster
+    await Promise.all(quizDB.questions.map(async (question) => {
+      question.question = await questionService.getQuestion(
+        question.questionId
+      );
+    }))
 
     return quizDB;
   }
