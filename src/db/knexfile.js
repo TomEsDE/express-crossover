@@ -32,8 +32,8 @@ export default {
     connection:
       'postgres://zzehrzmh:ZxYGjWCD6BSVkUgw16BsxZ2RF3x5xuj7@balarama.db.elephantsql.com/zzehrzmh',
     pool: {
-      min: 1,
-      max: 2,
+      min: 2,
+      max: 5,
     },
     migrations: {
       tableName: 'knex_migrations',
