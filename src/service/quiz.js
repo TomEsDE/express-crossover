@@ -25,12 +25,15 @@ class QuizService {
     //     );
     //   }
     // }
-    // faster
-    await Promise.all(quizDB.questions.map(async (question) => {
-      question.question = await questionService.getQuestion(
-        question.questionId
-      );
-    }))
+
+    // faster way
+    await Promise.all(
+      quizDB.questions.map(async (question) => {
+        question.question = await questionService.getQuestion(
+          question.questionId
+        );
+      })
+    );
 
     return quizDB;
   }
