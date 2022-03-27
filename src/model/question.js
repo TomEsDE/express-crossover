@@ -30,26 +30,6 @@ class Question {
     return result;
   }
 
-  async getQuestion(questionId) {
-    console.log('questionId', questionId);
-    const [result] = await db('question')
-      .select({
-        id: 'question.id',
-        question: 'question',
-        text: 'question.description',
-        number: 'number',
-        imageUrl: 'image_url',
-        shuffle: 'shuffle',
-        topic: 'topic.description',
-        language: 'language.country_code',
-      })
-      .leftJoin('topic', 'question.topic_id', 'topic.id')
-      .leftJoin('language', 'question.language_id', 'language.id')
-      .where({ 'question.id': questionId });
-
-    return result;
-  }
-
   async getRandomQuestion(topicId) {
     // console.log('questionId', questionId);
     let result = await db('question')

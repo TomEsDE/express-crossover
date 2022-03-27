@@ -34,11 +34,12 @@ class Quiz {
     return result;
   }
 
-  async updateQuestion(quizId, questionId, check) {
+  async updateQuestion(quizId, questionId, check, answerId) {
     const result = await db('quiz_question_junc')
       .update({
         check: check,
         date_checked: new Date(),
+        answer_id: answerId,
       })
       .where({ quiz_id: quizId, question_id: questionId });
 

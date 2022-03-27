@@ -1,4 +1,9 @@
 // Update with your config settings.
+import dotenv from 'dotenv';
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
@@ -29,8 +34,7 @@ export default {
 
   elephant: {
     client: 'postgresql',
-    connection:
-      'postgres://zzehrzmh:ZxYGjWCD6BSVkUgw16BsxZ2RF3x5xuj7@balarama.db.elephantsql.com/zzehrzmh',
+    connection: `postgres://zzehrzmh:${process.env.DB_ELEPHANT_PW}@balarama.db.elephantsql.com/zzehrzmh`,
     pool: {
       min: 1,
       max: 2,

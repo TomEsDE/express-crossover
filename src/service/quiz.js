@@ -57,9 +57,14 @@ class QuizService {
   }
 
   async updateQuestion(quizDto) {
-    const { quizId, questionId, check } = quizDto;
+    const { quizId, questionId, check, answerId } = quizDto;
 
-    const quizDB = await quizDao.updateQuestion(quizId, questionId, check);
+    const quizDB = await quizDao.updateQuestion(
+      quizId,
+      questionId,
+      check,
+      answerId
+    );
     console.log('quizDB', quizDB);
 
     return await this.getQuiz(quizId);
